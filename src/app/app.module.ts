@@ -1,7 +1,9 @@
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from './../environments/environment.prod';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {MatCardModule} from '@angular/material/card';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +22,8 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { LoginComponent } from './components/login/login.component';
+
 
 
 
@@ -30,7 +34,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     CoursesComponent,
     NotesComponent,
     ContactComponent,
-    AboutusComponent
+    AboutusComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,13 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFirestoreModule,
         AngularFireStorageModule,
-        AngularFireAuthModule
+        AngularFireAuthModule,
+        FormBuilder,
+        FormGroup,
+        Validators,
+        FormControl,
+        MatCardModule
+
 
 
   ],
