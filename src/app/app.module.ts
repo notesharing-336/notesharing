@@ -1,3 +1,5 @@
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from './../environments/environment.prod';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -15,6 +17,9 @@ import { CoursesComponent } from './pages/courses/courses.component';
 import { NotesComponent } from './pages/notes/notes.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 
 
@@ -36,7 +41,11 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
         MatButtonToggleModule,
         MatToolbarModule,
         MatTooltipModule,
-        MatTreeModule
+        MatTreeModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFirestoreModule,
+        AngularFireStorageModule,
+        AngularFireAuthModule
 
 
   ],
