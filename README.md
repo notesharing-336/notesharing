@@ -26,10 +26,14 @@ This application allows students to upload their notes onto a shared platform fo
 * Switch your branch to the `develop branch`
 * Create a new component using `ng generate component components/component-name` (e.g. components/search-bar) 
 
-## Adding a new feature to an existing page
+## Navigating to OR creating a branch for a component implementation
+* Go to the `develop branch`.
+* Create your new branch off the `develop branch` using the naming `component-component_name` (e.g. component-searchbar or component-coursescard)
+
+## Adding a new feature/component to an existing page
 * If you're already on a branch, either shelf or commit and add changes to your feature branch.
 * Checkout to the `develop branch`.
-* Create the page feature branch using the naming convention `page/feature-name` (e.g.home/signin-impl or courses/card-ui-impl).
+* Create the page feature branch off the `develop branch` using the naming convention `pagename/feature-name` (e.g.home/signin-impl or courses/card-ui-impl)
 * Implement your feature.
 * Commit, add and push your changes to the feature branch.
 * Create a pull request from the current `page/feature-name` to `develop`.
