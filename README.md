@@ -27,7 +27,7 @@ This application allows students to upload their notes onto a shared platform fo
 * Checkout to the `develop branch`.
 * Create the page feature branch using the naming convention `page/feature-name` (e.g.home/signin-impl or courses/card-ui-impl).
 * Implement your feature.
-* Commit and add your changes.
+* Commit, add and push your changes to the feature branch.
 * Create a pull request from the current `page/feature-name` to `develop`.
 * Have it reviewed by a team memmber.
 * Have the team member approve and merge the changes.
