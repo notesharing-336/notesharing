@@ -15,6 +15,9 @@ import { CoursesComponent } from './pages/courses/courses.component';
 import { NotesComponent } from './pages/notes/notes.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { CoursesCardComponent } from './componets/courses-card/courses-card.component';
+import { NotePreviewComponent } from './components/note-preview/note-preview.component';
 
 
 
@@ -25,7 +28,10 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
     CoursesComponent,
     NotesComponent,
     ContactComponent,
-    AboutusComponent
+    AboutusComponent,
+    SearchBarComponent,
+    CoursesCardComponent,
+    NotePreviewComponent
   ],
   imports: [
     BrowserModule,
