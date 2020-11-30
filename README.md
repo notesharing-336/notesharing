@@ -39,7 +39,7 @@ This application allows students to upload their notes onto a shared platform fo
 ## Helpful Links
 * Link to trello board: https://trello.com/b/iRyaiiGu/notesharing
 * Shared Google drive: https://drive.google.com/drive/u/1/folders/0AEzUNb16MpANUk9PVA
-* How to display images from Google Drive: https://stackoverflow.com/questions/15557392/how-do-i-display-images-from-google-drive-on-a-website
+* How to display images from Google Drive: https://dev.to/imamcu07/embed-or-display-image-to-html-page-from-google-drive-3ign
 
 ## Help with Angular CLI
 
