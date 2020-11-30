@@ -26,7 +26,7 @@ This application allows students to upload their notes onto a shared platform fo
 * Switch your branch to the `develop branch`
 * Create a new component using `ng generate component components/component-name` (e.g. components/search-bar) 
 
-## Navigating to or creating a branch for a component implementation
+## Navigating to OR creating a branch for a component implementation
 * Go to the `develop branch`.
 * Create your new branch off the `develop branch` using the naming `component-component_name` (e.g. component-searchbar or component-coursescard)
 
