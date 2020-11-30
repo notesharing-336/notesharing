@@ -12,7 +12,7 @@ This application allows students to upload their notes onto a shared platform fo
 ## Project workflow
 * No code should be pushed to the `master branch`. 
 * Implemented feature branches should be pushed to the `feature branch` then to the `develop branch`.
-* New pages should be created from the `develop branch` ONLY.(see how below).
+* New `pages` and `components` should be created from the `develop branch` ONLY. (see how below).
 * A page feature branch should be named as `page/feature-name` (e.g.home/signin-impl or courses/card-ui-impl).
 * A generic feature liked database setup should be named as `featurename`.
 * After any new feature development, create a pull request to be reviewed by a team member.
@@ -20,7 +20,11 @@ This application allows students to upload their notes onto a shared platform fo
 
 ## Creating a new page
 * Switch your branch to the `develop branch`
-* Create a new component using `ng generate component pages/page_name` 
+* Create a new component using `ng generate component pages/page-name` (e.g. pages/courses)
+
+## Creating a new component
+* Switch your branch to the `develop branch`
+* Create a new component using `ng generate component components/component-name` (e.g. components/search-bar) 
 
 ## Adding a new feature to an existing page
 * If you're already on a branch, either shelf or commit and add changes to your feature branch.
@@ -34,6 +38,8 @@ This application allows students to upload their notes onto a shared platform fo
 
 ## Helpful Links
 * Link to trello board: https://trello.com/b/iRyaiiGu/notesharing
+* Shared Google drive: https://drive.google.com/drive/u/1/folders/0AEzUNb16MpANUk9PVA
+* How to display images from Google Drive: https://stackoverflow.com/questions/15557392/how-do-i-display-images-from-google-drive-on-a-website
 
 ## Help with Angular CLI
 
