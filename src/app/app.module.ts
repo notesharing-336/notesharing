@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from './../environments/environment.prod';
@@ -55,7 +56,8 @@ import { LoginComponent } from './components/login/login.component';
         FormGroup,
         Validators,
         FormControl,
-        MatCardModule
+        MatCardModule,
+        ReactiveFormsModule
 
 
 
