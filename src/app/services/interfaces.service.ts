@@ -1,3 +1,4 @@
+import { Identifiers } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 
 /**
@@ -37,6 +38,7 @@ export interface Course{
  */
 export interface Note {
   id: number;
+  contributorId: string;
   courseTitle: string;
   documentname: string;
   documentImage?: string;
@@ -60,6 +62,7 @@ export interface Professor {
  * contributed.
  */
 export interface Student {
+  studentId: string;
   firstname: string;
   lastname: string;
   year: string;
