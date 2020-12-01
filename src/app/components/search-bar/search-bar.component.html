@@ -1,6 +1,7 @@
 <div class="md-form">
-    <input type="search" [(ngModel)]="searchText" placeholder="Search text">
-  </div>
-<div *ngFor="let data of dataset | filter: searchText">
-    <p>{{data}}</p>
+    <input type="search" [(ngModel)]="searchText" placeholder="Search course title">
 </div>
+<div *ngFor="let data of dataset | filter: searchText">
+    <p (click) = "displaySearchResults(data)">{{data}}</p>
+</div>
+<p>You searched for the course: {{searchResult}}</p>
