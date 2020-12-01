@@ -1,5 +1,5 @@
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from './../environments/environment.prod';
 import { BrowserModule } from '@angular/platform-browser';
@@ -51,11 +51,6 @@ import { LoginComponent } from './components/login/login.component';
         AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFirestoreModule,
         AngularFireStorageModule,
-        AngularFireAuthModule,
-        FormBuilder,
-        FormGroup,
-        Validators,
-        FormControl,
         MatCardModule,
         ReactiveFormsModule
 

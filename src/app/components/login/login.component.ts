@@ -1,6 +1,8 @@
+
 import { AuthenticateService } from './../../service/authenticateservice.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +16,8 @@ export class LoginComponent implements OnInit {
 
 
     private authService: AuthenticateService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
 
   ) { }
 
@@ -53,14 +56,14 @@ export class LoginComponent implements OnInit {
       .then(res => {
         console.log(res);
         this.errorMessage = '';
-        // this.navCtrl.navigateForward('/home');
+        this.router.navigate(['/contact']);
       }, err => {
         this.errorMessage = err.message;
       });
   }
 
   goToRegisterPage() {
-    // this.router.navigateForward('/register');
+     this.router.navigate('/signup');
   }
 
 }
