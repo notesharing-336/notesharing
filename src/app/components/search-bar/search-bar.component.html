@@ -1,1 +1,6 @@
-<p>search-bar started!</p>
+<div class="md-form">
+    <input type="search" [(ngModel)]="searchText" placeholder="Search text">
+  </div>
+<div *ngFor="let data of dataset | filter: searchText">
+    <p>{{data}}</p>
+</div>

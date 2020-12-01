@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -16,8 +17,9 @@ import { NotesComponent } from './pages/notes/notes.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { CoursesCardComponent } from './componets/courses-card/courses-card.component';
+import { CoursesCardComponent } from './components/courses-card/courses-card.component';
 import { NotePreviewComponent } from './components/note-preview/note-preview.component';
+import { FilterPipe } from './filter.pipe';
 
 
 
@@ -31,20 +33,21 @@ import { NotePreviewComponent } from './components/note-preview/note-preview.com
     AboutusComponent,
     SearchBarComponent,
     CoursesCardComponent,
-    NotePreviewComponent
+    NotePreviewComponent,
+    FilterPipe,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-   MatToolbarModule,
-        MatButtonModule,
-        MatButtonToggleModule,
-        MatToolbarModule,
-        MatTooltipModule,
-        MatTreeModule
-
-
+    MatToolbarModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatTreeModule, 
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

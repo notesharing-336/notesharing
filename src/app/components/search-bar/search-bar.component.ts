@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
+  
+  dataset: string[];
+  searchText :string;
 
-  constructor() { }
+  constructor() { 
+    this.dataset = ['hello', 'boy', 'boss', 'toy', 'samplenote']
+  }
 
   ngOnInit(): void {
   }
