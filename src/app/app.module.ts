@@ -21,6 +21,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { CoursesCardComponent } from './components/courses-card/courses-card.component';
 import { NotePreviewComponent } from './components/note-preview/note-preview.component';
 import { FilterPipe } from './filter.pipe';
+import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 
 
 
@@ -36,6 +37,7 @@ import { FilterPipe } from './filter.pipe';
     CoursesCardComponent,
     NotePreviewComponent,
     FilterPipe,
+    MenuBarComponent,
   ],
   
   imports: [
