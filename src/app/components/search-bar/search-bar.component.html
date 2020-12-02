@@ -1,1 +1,9 @@
-<p>search-bar works!</p>
+<div class = "search-field">
+    <label for="searchbox">
+        <input  type="search" name="searchbox" [(ngModel)]="searchText" placeholder="Search course title">
+    </label>
+</div>
+<div class="result-box" *ngFor="let data of fakeDataSet | searchFor: searchText">
+    <button (click) = "displaySearchResults(data)">{{data}}</button>
+</div>
+<p>You searched for the course: {{searchResult}}</p>

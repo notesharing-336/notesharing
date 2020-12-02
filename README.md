@@ -1,3 +1,5 @@
+
+
 # Notesharing  
 This application allows students to upload their notes onto a shared platform for others to access, review, rate and comment on.  
 
@@ -53,4 +55,4 @@ This application allows students to upload their notes onto a shared platform fo
 * Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 * Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).  
 * Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).  
-* To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).  
+* To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README
