@@ -7,13 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
   
-  dataset: string[];
+  fakeDataSet: string[];    //replaced by a list to hold actual courses titles
   searchText :string;
-  showSearchResults: boolean = true;
-  searchResult: string;
+  searchResult: string;     //would be replace to display cards
 
   constructor() { 
-    this.dataset = [
+    this.fakeDataSet = [
       'HIST 151', 
       'BIO 223', 
       'CS 336', 
@@ -30,8 +29,13 @@ export class SearchBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  displaySearchResults(desiredSearchVal: string): void {
-    this.searchResult = desiredSearchVal
+  /**
+   * Calls the service class to produces all notes under that 
+   * that course title.
+   * @param aCourseTitle the course title to be used to retrieve notes
+   */
+  displaySearchResults(aCourseTitle: string): void {
+    this.searchResult = aCourseTitle
     this.searchText = ""
    
   }
