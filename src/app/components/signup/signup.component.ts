@@ -1,34 +1,24 @@
-
 import { AuthenticateService } from './../../service/authenticateservice.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
-
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
 })
-export class LoginComponent implements OnInit {
+export class SignupComponent implements OnInit {
 
-  constructor(
-
-
-    private authService: AuthenticateService,
-    private formBuilder: FormBuilder,
-    private router: Router
-
-  ) { }
 
   validations_form: FormGroup;
-  errorMessage = '';
-
+  errorMessage: string = '';
+  successMessage: string = '';
 
   validation_messages = {
     email: [
       { type: 'required', message: 'Email is required.' },
-      { type: 'pattern', message: 'Please enter a valid email.' }
+      { type: 'pattern', message: 'Enter a valid email.' }
     ],
     password: [
       { type: 'required', message: 'Password is required.' },
@@ -36,8 +26,13 @@ export class LoginComponent implements OnInit {
     ]
   };
 
-  ngOnInit() {
+  constructor(
+    private router: Router,
+    private authService: AuthenticateService,
+    private formBuilder: FormBuilder
+  ) { }
 
+  ngOnInit() {
     this.validations_form = this.formBuilder.group({
       email: new FormControl('', Validators.compose([
         Validators.required,
@@ -50,20 +45,24 @@ export class LoginComponent implements OnInit {
     });
   }
 
-
-  loginUser(value) {
-    this.authService.loginUser(value)
+  tryRegister(value) {
+    this.authService.registerUser(value)
       .then(res => {
         console.log(res);
-        this.errorMessage = '';
-        this.router.navigate(['/contact']);
+        this.errorMessage = "";
+        this.successMessage = "Your account has been created. Please log in.";
       }, err => {
+        console.log(err);
         this.errorMessage = err.message;
-      });
+        this.successMessage = "";
+      })
   }
 
-  goToRegisterPage() {
-     this.router.navigate[('/signup')];
+  goLoginPage() {
+    this.router.navigate[('')];
   }
+
 
 }
+
+
