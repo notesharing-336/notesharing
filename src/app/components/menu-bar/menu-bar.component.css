@@ -2,8 +2,26 @@
     background-color: transparent;
 }
 
+.links-container {
+    display: table;
+    width: 100%;
+}
+.profiles-icon {
+    background-color: #BD5A67;
+}
+
+
 a {
     color: black;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    font-weight: 100;
+}
+
+a:hover {
+    font-weight: 500;
+    background-color:transparent;
 }
 
 *{

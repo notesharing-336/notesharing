@@ -1,12 +1,17 @@
 <mat-toolbar class="toolbar" color="primary">
     <mat-toolbar-row>
-        <span class="menu-spacer"></span>
-        <div>
-            <a mat-button [routerLink]="''">Home </a>
-            <a mat-button [routerLink]="'/courses'"> courses </a>
-            <a mat-button [routerLink]="'/notes'"> notes </a>
-            <a mat-button [routerLink]="'/contact'"> contact</a>
-            <a mat-button [routerLink]="'/aboutus'"> about us</a>
+        <div class="links-container">
+            <button mat-icon-button [mat-menu-trigger-for]="menu" class="profiles-icon">
+                <mat-icon>person</mat-icon>
+            </button>
+           <mat-menu #menu="matMenu">
+                <span>My Profile</span>
+           </mat-menu>
+            <a mat-button [routerLink]="''">HOME </a>
+            <a mat-button [routerLink]="'/courses'"> COURSES </a>
+            <a mat-button [routerLink]="'/notes'"> NOTES </a>
+            <a mat-button [routerLink]="'/contact'"> CONTACT</a>
+            <a mat-button [routerLink]="'/aboutus'"> ABOUT US</a>
         </div>
     </mat-toolbar-row>
 </mat-toolbar>
