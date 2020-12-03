@@ -1,0 +1,32 @@
+.single-course-container {
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr;
+    padding-top: 20px;
+    background-color: #F8F9FA;
+    box-shadow: 0.5px 0.8px 1px 0.5px #888888;
+    border-radius: 5px;
+}
+
+.icon {
+    display: inline-flex;
+    vertical-align: middle;
+    color: #B88181;
+}
+
+.trending-icon {
+    color: red;
+}
+.card-text {
+    margin-left: 5px;
+}
+
+.comments-rating-container {
+    text-align: right;
+}
+
+.comment-rating-number {
+    margin-right: 10px;
+    font-size: smaller;
+}
+
+
