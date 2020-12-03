@@ -24,6 +24,7 @@ import { NotePreviewComponent } from './components/note-preview/note-preview.com
 import { FilterPipe } from './filter.pipe';
 import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 import { TopdashboardComponent } from './components/topdashboard/topdashboard.component';
+import { SingleCourseInfoComponent } from './components/single-course-info/single-course-info.component';
 
 
 
@@ -41,6 +42,7 @@ import { TopdashboardComponent } from './components/topdashboard/topdashboard.co
     FilterPipe,
     MenuBarComponent,
     TopdashboardComponent,
+    SingleCourseInfoComponent,
   ],
   
   imports: [
