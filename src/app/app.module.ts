@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -21,6 +22,9 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { CoursesCardComponent } from './components/courses-card/courses-card.component';
 import { NotePreviewComponent } from './components/note-preview/note-preview.component';
 import { FilterPipe } from './filter.pipe';
+import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
+import { TopdashboardComponent } from './components/topdashboard/topdashboard.component';
+import { SingleCourseInfoComponent } from './components/single-course-info/single-course-info.component';
 
 
 
@@ -36,6 +40,9 @@ import { FilterPipe } from './filter.pipe';
     CoursesCardComponent,
     NotePreviewComponent,
     FilterPipe,
+    MenuBarComponent,
+    TopdashboardComponent,
+    SingleCourseInfoComponent,
   ],
   
   imports: [
@@ -49,8 +56,9 @@ import { FilterPipe } from './filter.pipe';
     MatTooltipModule,
     MatTreeModule, 
     FormsModule,
-
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatIconModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

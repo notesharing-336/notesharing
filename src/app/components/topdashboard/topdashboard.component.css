@@ -1,0 +1,34 @@
+*{
+     /* border: 1px solid black; */
+}
+
+.container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 3fr 2fr 1fr;
+}
+
+
+.sign-up-btn {
+    text-align: center;
+}
+
+.sign-up-btn button {
+    min-width: 200px;
+    max-width: 200px;
+    width: 100%;
+    background-color: #BD5A67;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 20px;
+}
+
+.sign-up-btn button {
+    outline: none;
+}
+
+.sign-up-btn button:hover {
+    opacity: 0.8;
+}
