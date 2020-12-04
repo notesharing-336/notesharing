@@ -3,7 +3,9 @@
         <input  type="search" name="searchbox" [(ngModel)]="searchText" placeholder="Search course title">
     </label>
 </div>
-<div class="result-box" *ngFor="let data of fakeDataSet | searchFor: searchText">
-    <button (click) = "displaySearchResults(data)">{{data}}</button>
+<div class="result-box" >
+    <div class="result-list-container"*ngFor="let data of fakeDataSet | searchFor: searchText">
+        <button (click) = "displaySearchResults(data)">{{data}}</button>
+    </div>
 </div>
 <p>You searched for the course: {{searchResult}}</p>
