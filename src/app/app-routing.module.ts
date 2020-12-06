@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotesComponent } from './pages/notes/notes.component';
+import { SingleCourseInfoComponent } from './components/single-course-info/single-course-info.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
