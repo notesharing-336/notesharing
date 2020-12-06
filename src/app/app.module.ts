@@ -19,7 +19,6 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
-import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 import { HomeComponent } from './pages/home/home.component';
@@ -61,7 +60,7 @@ import { SingleCourseInfoComponent } from './components/single-course-info/singl
     TopdashboardComponent,
     SingleCourseInfoComponent,
   ],
-  
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -79,7 +78,7 @@ import { SingleCourseInfoComponent } from './components/single-course-info/singl
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTreeModule, 
+    MatTreeModule,
     FormsModule,
     MatFormFieldModule,
     MatIconModule,
