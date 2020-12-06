@@ -1,11 +1,12 @@
 <mat-card class="login">
-
+    <mat-card-title class="card-title">LOGIN</mat-card-title>
     <form class="form" [formGroup]="validations_form" (ngSubmit)="loginUser(validations_form.value)">
 
 
-
-        <label position="floating" color="primary">Email</label>
-        <input type="text" formControlName="email">
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="text" formControlName="email">
+        </mat-form-field>
         <div class="validation-errors">
             <ng-container *ngFor="let validation of validation_messages.email">
                 <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
@@ -14,9 +15,10 @@
             </ng-container>
         </div>
 
-
-        <label position="floating" color="primary">Password</label>
-        <input type="password" formControlName="password" class="form-controll" required>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password" class="form-controll" required>
+        </mat-form-field>
 
         <div class="validation-errors">
             <ng-container *ngFor="let validation of validation_messages.password">
