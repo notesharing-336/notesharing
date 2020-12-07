@@ -1,0 +1,23 @@
+.card-container {
+    margin: 10px;
+    max-width: 300px;
+    border-radius: 10px;
+    background-color: #B88181;
+}
+
+.card-container:hover {
+    opacity: 0.8;
+}
+
+img {
+    object-fit: cover;
+}
+
+h1, h3, p {
+    font-family: 'Roboto';
+    color: white;
+}
+
+h3 {
+    text-align: right;
+}

@@ -6,9 +6,10 @@ import { CoursesComponent } from './pages/courses/courses.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotesComponent } from './pages/notes/notes.component';
 import { SingleCourseInfoComponent } from './components/single-course-info/single-course-info.component';
+import { NoteCardComponent } from './components/note-card/note-card.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: NoteCardComponent},
   {path: 'courses', component: CoursesComponent },
   {path: 'notes', component: NotesComponent},
   {path: 'contact', component: ContactComponent},

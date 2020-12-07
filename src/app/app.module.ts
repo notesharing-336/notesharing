@@ -4,9 +4,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from './../environments/environment.prod';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+
 import {MatCardModule} from '@angular/material/card';
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +20,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatInputModule } from '@angular/material/input';
+
 
 import { HomeComponent } from './pages/home/home.component';
 import { CoursesComponent } from './pages/courses/courses.component';
@@ -38,6 +39,7 @@ import { FilterPipe } from './filter.pipe';
 import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 import { TopdashboardComponent } from './components/topdashboard/topdashboard.component';
 import { SingleCourseInfoComponent } from './components/single-course-info/single-course-info.component';
+import { NoteCardComponent } from './components/note-card/note-card.component';
 
 
 
@@ -59,6 +61,7 @@ import { SingleCourseInfoComponent } from './components/single-course-info/singl
     MenuBarComponent,
     TopdashboardComponent,
     SingleCourseInfoComponent,
+    NoteCardComponent,
   ],
 
   imports: [
