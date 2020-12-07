@@ -9,7 +9,7 @@ import { SingleCourseInfoComponent } from './components/single-course-info/singl
 import { NoteCardComponent } from './components/note-card/note-card.component';
 
 const routes: Routes = [
-  {path: '', component: NoteCardComponent},
+  {path: '', component: HomeComponent},
   {path: 'courses', component: CoursesComponent },
   {path: 'notes', component: NotesComponent},
   {path: 'contact', component: ContactComponent},

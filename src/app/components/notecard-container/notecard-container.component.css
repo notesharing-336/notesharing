@@ -1,0 +1,47 @@
+.container {
+    margin: 20px;
+    min-width: 450px;
+    border: 0.5px solid lightgray;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.header h2 {
+    font-family: 'Roboto';
+    font-weight: 200;
+    opacity: 0.7;
+}
+
+.card-display-container {
+    display: grid;
+    gap: 20px;
+}
+
+/* When the screen is super small, it should be in 1 column */
+@media (min-width:400px) {
+    .card-display-container {
+        grid-template-columns:max-content;
+    }
+}
+
+@media (min-width:700px) {
+    .card-display-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width:900px) {
+    .card-display-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* When the screen is very large, like a desktop, it should be in 4 columns */
+@media (min-width:1300px) {
+    .card-display-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

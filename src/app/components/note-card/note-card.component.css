@@ -1,8 +1,9 @@
 .card-container {
     margin: 10px;
-    max-width: 300px;
+    max-width: 400px;
     border-radius: 10px;
     background-color: #B88181;
+    border: 0.5px solid lightgray;
 }
 
 .card-container:hover {
@@ -11,6 +12,7 @@
 
 img {
     object-fit: cover;
+    height: 250px;
 }
 
 h1, h3, p {

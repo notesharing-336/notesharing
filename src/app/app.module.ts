@@ -40,6 +40,7 @@ import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 import { TopdashboardComponent } from './components/topdashboard/topdashboard.component';
 import { SingleCourseInfoComponent } from './components/single-course-info/single-course-info.component';
 import { NoteCardComponent } from './components/note-card/note-card.component';
+import { NotecardContainerComponent } from './components/notecard-container/notecard-container.component';
 
 
 
@@ -62,6 +63,7 @@ import { NoteCardComponent } from './components/note-card/note-card.component';
     TopdashboardComponent,
     SingleCourseInfoComponent,
     NoteCardComponent,
+    NotecardContainerComponent,
   ],
 
   imports: [
