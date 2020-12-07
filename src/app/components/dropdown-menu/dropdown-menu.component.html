@@ -1,0 +1,10 @@
+
+
+<mat-form-field appearance="fill">
+    <mat-label>{{Label}}</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let eachfiltervalue of filtervalues" [value]="eachfiltervalue">
+        {{eachfiltervalue}}
+      </mat-option>
+    </mat-select>
+</mat-form-field>

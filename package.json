@@ -23,7 +23,7 @@
     "@angular/router": "~10.1.6",
     "angular-bootstrap-md": "^10.1.1",
     "modules": "^0.4.0",
-    "node": "^15.0.1",
+    "node": "^15.3.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

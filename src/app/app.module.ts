@@ -25,7 +25,9 @@ import { FilterPipe } from './filter.pipe';
 import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 import { TopdashboardComponent } from './components/topdashboard/topdashboard.component';
 import { SingleCourseInfoComponent } from './components/single-course-info/single-course-info.component';
-
+import {MatSelectModule} from '@angular/material/select';
+import { FilterBarComponent } from './components/filter-bar/filter-bar.component';
+import {DropdownMenuComponent} from './components/dropdown-menu/dropdown-menu.component';
 
 
 @NgModule({
@@ -43,6 +45,8 @@ import { SingleCourseInfoComponent } from './components/single-course-info/singl
     MenuBarComponent,
     TopdashboardComponent,
     SingleCourseInfoComponent,
+    DropdownMenuComponent,
+    FilterBarComponent,
   ],
   
   imports: [
@@ -59,6 +63,7 @@ import { SingleCourseInfoComponent } from './components/single-course-info/singl
     MatFormFieldModule,
     MatIconModule,
     MatMenuModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
