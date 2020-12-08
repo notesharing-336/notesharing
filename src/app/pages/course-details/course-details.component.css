@@ -1,0 +1,16 @@
+.container {
+    margin: 20px;
+    min-width: 450px;
+    border: 0.5px solid lightgray;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.header h2 {
+    font-family: 'Roboto';
+    font-weight: 200;
+    opacity: 0.7;
+}

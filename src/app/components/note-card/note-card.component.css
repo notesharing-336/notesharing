@@ -3,6 +3,7 @@
     max-width: 400px;
     border-radius: 10px;
     background-color: #B88181;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
     border: 0.5px solid lightgray;
 }
 
@@ -16,7 +17,7 @@ img {
 }
 
 h1, h3, p {
-    font-family: 'Roboto';
+    font-family: "Raleway SemiBold", sans-serif;
     color: white;
 }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-single-course-info',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleCourseInfoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pageRouter: Router) { }
 
   ngOnInit(): void {
+    
   }
-
+  
+  showNotesPage() {
+    this.pageRouter.navigateByUrl("/notes")
+  }
 }

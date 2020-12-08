@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-courses-card',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesCardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pageRouter: Router) { }
 
   ngOnInit(): void {
   }
 
+  showCourseDetails() {
+    this.pageRouter.navigateByUrl("/course-details");
+  }
 }

@@ -41,6 +41,7 @@ import { TopdashboardComponent } from './components/topdashboard/topdashboard.co
 import { SingleCourseInfoComponent } from './components/single-course-info/single-course-info.component';
 import { NoteCardComponent } from './components/note-card/note-card.component';
 import { NotecardContainerComponent } from './components/notecard-container/notecard-container.component';
+import { CourseDetailsComponent } from './pages/course-details/course-details.component';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { NotecardContainerComponent } from './components/notecard-container/note
     SingleCourseInfoComponent,
     NoteCardComponent,
     NotecardContainerComponent,
+    CourseDetailsComponent,
   ],
 
   imports: [
