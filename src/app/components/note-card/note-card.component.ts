@@ -7,14 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoteCardComponent implements OnInit {
 
-  constructor(
-    
-    
-    ) { 
-    
-  }
+  constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

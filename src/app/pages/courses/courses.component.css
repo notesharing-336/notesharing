@@ -1,34 +1,30 @@
-* {
-    box-sizing: border-box;
-  }
-
-.column {
-    float: left;
-    width: 25%;
-    padding: 0 40px;
-   
-  }
-
-.cards-container {margin: 0 -5px;}
-
-.cards-container:after {
-    content: "";
-    display: table;
-    clear: both;
+.card-display-container {
+  display: grid;
+  gap: 20px;
 }
 
-body{
-    width:100%;
+/* When the screen is super small, it should be in 1 column */
+@media (min-width:400px) {
+  .card-display-container {
+      grid-template-columns:max-content;
+  }
 }
 
-
-/* Responsive columns */
-@media screen and (max-width: 600px) {
-    .cards-container {
-      width: 100%;
-      display: block;
-      margin-bottom: 20px;
-    }
+@media (min-width:700px) {
+  .card-display-container {
+      grid-template-columns: repeat(2, 1fr);
   }
+}
 
+@media (min-width:900px) {
+  .card-display-container {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
 
+/* When the screen is very large, like a desktop, it should be in 4 columns */
+@media (min-width:1300px) {
+  .card-display-container {
+      grid-template-columns: repeat(4, 1fr);
+  }
+}
