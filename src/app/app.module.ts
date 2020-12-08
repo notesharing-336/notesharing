@@ -4,9 +4,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from './../environments/environment.prod';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+
 import {MatCardModule} from '@angular/material/card';
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -40,6 +40,7 @@ import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 import { TopdashboardComponent } from './components/topdashboard/topdashboard.component';
 import { SingleCourseInfoComponent } from './components/single-course-info/single-course-info.component';
 import { NoteCardComponent } from './components/note-card/note-card.component';
+import { NotecardContainerComponent } from './components/notecard-container/notecard-container.component';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { NoteCardComponent } from './components/note-card/note-card.component';
     TopdashboardComponent,
     SingleCourseInfoComponent,
     NoteCardComponent,
+    NotecardContainerComponent,
   ],
 
   imports: [
