@@ -1,9 +1,9 @@
 <mat-card class="course-card">
-    <img mat-card-image src="assets/businessLogo.jpeg">
+    <img mat-card-image src="{{courseImageSrc}}">
     <mat-card-header>
     </mat-card-header>
-    <mat-card-title class="card-title">Is this thing working?</mat-card-title>
-    <mat-card-subtitle class="card-description"> This is a hardcoded subtitle </mat-card-subtitle>
+    <mat-card-title class="card-title">{{courseTitle}}</mat-card-title>
+    <mat-card-subtitle class="card-description"> {{courseDescription}} </mat-card-subtitle>
     <mat-card-actions layout="row" layout-align="start center">
         <button class="course-btn" type="submit" (click)="showCourseDetails()">Find Course</button>
     </mat-card-actions>

@@ -1,13 +1,11 @@
 <app-topdashboard></app-topdashboard>
 <div class="card-display-container">
-    <app-courses-card></app-courses-card>
-    <app-courses-card></app-courses-card>
-    <app-courses-card></app-courses-card>
-    <app-courses-card></app-courses-card>
-    <app-courses-card></app-courses-card>
-    <app-courses-card></app-courses-card>
-    <app-courses-card></app-courses-card>
-    <app-courses-card></app-courses-card>
+    <div *ngFor="let category of courseCategories">
+         <app-courses-card [courseImageSrc] = "category.categoryImage"[courseTitle]="category.categoryName"
+        [courseDescription]="category.description">
+    </app-courses-card>
+    </div>
+   
 </div>
 
 
