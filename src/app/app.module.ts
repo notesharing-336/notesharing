@@ -43,8 +43,6 @@ import { NoteCardComponent } from './components/note-card/note-card.component';
 import { NotecardContainerComponent } from './components/notecard-container/notecard-container.component';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
