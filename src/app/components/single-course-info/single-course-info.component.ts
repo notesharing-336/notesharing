@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
@@ -8,10 +8,14 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class SingleCourseInfoComponent implements OnInit {
 
+  //inputs that would come from the course-details page
+  @Input() detailedCourseTitle: string;
+  @Input() professors: string;
+  @Input() contributors: string;
+  
   constructor(private pageRouter: Router) { }
 
   ngOnInit(): void {
-    
   }
   
   showNotesPage() {

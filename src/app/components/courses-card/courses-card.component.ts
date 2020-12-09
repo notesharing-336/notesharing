@@ -1,3 +1,4 @@
+import { state } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
@@ -8,7 +9,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class CoursesCardComponent implements OnInit {
 
-  //would be receiving a course title and description for each course category
+  //would be receiving a course category information from the courses page
   @Input() courseImageSrc: string;
   @Input() courseTitle: string;
   @Input() courseDescription: String;
@@ -18,8 +19,12 @@ export class CoursesCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //TODO: Change this to take arguments where you would pass in category type
-  showCourseDetails() {
-    this.pageRouter.navigateByUrl("/course-details"); 
+  /**
+   * This function takes the current course category title and 
+   * then passes that as a value when routing to the course
+   * details page.
+   */
+  showCourseDetails(courseTitle: string) {
+    this.pageRouter.navigateByUrl("/course-details", {state: {data: courseTitle} }); 
   }
 }

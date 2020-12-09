@@ -82,22 +82,36 @@ export class CoursesService {
 
   constructor() { }
 
+  /**
+   * Retrives all the course categories and its information
+   * to allow it to be rendered on the webpage
+   */
   retrieveAllCourseCategories() : CourseCategory[] {
     this.courseCategories = getAllCourseCategory();   //static data from the data folder.
     return this.courseCategories;
   }
 
+  /**
+   * Retrieves all courses from the database.
+   */
   retrieveAllCourses() : Course[] {
     this.courses = getAllAvailableCourses();
     return this.courses;
   }
 
-  retrieveAllCoursesByCourseCategory(category: string) : Course[] {
-    let filteredCourses: Course[];
+  /**
+   * Retrieves all courses based on the category type
+   * Example, if the categoryTitle is "Chemisty", it will
+   * retrieve only Chemistry related courses like Chem 101,
+   * Chem 103, etc.
+   * @param categoryTitle the course category for filtering.
+   */
+  retrieveCoursesByCategory(categoryTitle: string) : Course[] {
+    let filteredCourses: Course[] = [];
     let courses: Course[] = this.retrieveAllCourses();
     if (courses !== undefined || courses !== null) {
       courses.forEach(course => {
-        if(course.courseCategoryTitle === category)  {
+        if(course.courseCategoryTitle === categoryTitle)  {
           filteredCourses.push(course)
         }
       });

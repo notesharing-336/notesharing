@@ -39,7 +39,7 @@ export function getAllCourseCategory() : CourseCategory[]{
         { 
             categoryName: "Computer Science",
             description: CategoryDescription.COMPUTER_SCIENCE,
-            categoryImage: "assets/images/bioLogo.jpg",
+            categoryImage: "assets/images/csLogo.jpg",
         },
 
         {

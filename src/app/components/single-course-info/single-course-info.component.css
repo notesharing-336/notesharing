@@ -1,6 +1,6 @@
 .single-course-container {
     display: grid;
-    grid-template-columns:  1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     padding-top: 20px;
     background-color: #F8F9FA;
     box-shadow: 0.5px 0.8px 1px 0.5px #888888;;

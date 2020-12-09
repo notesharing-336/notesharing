@@ -1,5 +1,6 @@
 import { Course } from '../services/courses.service';
 
+//A constant that holds the description of each specific course
 export enum CoursesDescriptions {
     MATH_171 = "CALCLUS I",
     MATH_172 = "CALCULUS II",
@@ -15,13 +16,37 @@ export enum CoursesDescriptions {
     HIST_153 = "EXPLORATIONS IN WORLD HISTORY"
 }
 
-
+/**
+ * This function returns a list containing a sample list of courses
+ * and their course details.
+ */
 export function getAllAvailableCourses() : Course[] {
     return [
         {
+            courseName: "MATH 171",
+            courseDescription: CoursesDescriptions.MATH_171,
+            courseCategoryTitle: "Mathematics",
+            professors: ["Scofield, Ferdinard"],
+            contributors: ["Nathan Wang, Peter Peng"]
+        },
+        {
+            courseName: "MATH 172",
+            courseDescription: CoursesDescriptions.MATH_172,
+            courseCategoryTitle: "Mathematics",
+            professors: ["Scofield, Ferdinard"],
+            contributors: ["Robert Akinie, Chiz Nnodu"]
+        },
+        {
+            courseName: "CHEM 103",
+            courseDescription: CoursesDescriptions.MATH_171,
+            courseCategoryTitle: "Chemistry",
+            professors: ["Debra Freeberg"],
+            contributors: ["Jojo Arthur, Kwaku Boateng"]
+        },
+        {
             courseName: "HIST 151",
             courseDescription: CoursesDescriptions.HIST_151,
-            courseCategoryTitle: "Mathematics",
+            courseCategoryTitle: "History",
             professors: ["Douglas Howard"],
             contributors: ["Bernard Boadu, Alfred Marfo"]
         },
@@ -37,7 +62,7 @@ export function getAllAvailableCourses() : Course[] {
             courseDescription: CoursesDescriptions.CS_336,
             courseCategoryTitle: "Computer Science",
             professors: ["Victor Norman, Keith Vander Linden"],
-            contributors: ["Bernard Boadu, Alfred Marfo, Valeria Martinex"]
+            contributors: ["Alfred Marfo, Valeria Martinez"]
         },
         {
             courseName: "CS 112",
