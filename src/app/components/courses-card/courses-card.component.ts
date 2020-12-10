@@ -24,7 +24,7 @@ export class CoursesCardComponent implements OnInit {
    * then passes that as a value when routing to the course
    * details page.
    */
-  showCourseDetails(courseTitle: string) {
-    this.pageRouter.navigateByUrl("/course-details", {state: {data: courseTitle} }); 
+  showCourseDetails(courseCategory: string) {
+    this.pageRouter.navigateByUrl("/course-details", {state: {data: courseCategory, queryType: "COURSE_CATEGORY"} } ); 
   }
 }
