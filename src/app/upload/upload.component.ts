@@ -1,3 +1,5 @@
+import { CoursesService } from './../services/courses.service';
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,17 +8,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./upload.component.css']
 })
 export class UploadComponent {
+  coursecat:string;
   coursetitle: string;
   year: string;
   Name: string;
   isHovering: boolean;
   isUpload: boolean = false;
   isreadytoupload:boolean = false;
+  courses: any;
 
   files: File[] = [];
 
+constructor(public db: CoursesService){
+this.courses = db.retrieveAllCourseCategories();
 
-
+}
   togglereadyupload(){
 this.isreadytoupload = true
   }

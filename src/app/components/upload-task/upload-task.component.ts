@@ -16,6 +16,7 @@ export class UploadTaskComponent implements OnInit {
   @Input() coursetitle: string;
   @Input() name:string;
   @Input() year:string;
+  @Input() courseCategory:string;
 
   task: AngularFireUploadTask;
 
@@ -38,7 +39,7 @@ export class UploadTaskComponent implements OnInit {
     //
 
     // sets the path to our firebase storage
-    const path = `test/${Date.now()}_${this.file.name}`;
+    const path = `${this.courseCategory}/${Date.now()}_${this.file.name}`;
 
     // Reference to storage bucket--
     const ref = this.storage.ref(path);
@@ -55,7 +56,7 @@ export class UploadTaskComponent implements OnInit {
       finalize( async() =>  {
         this.downloadURL = await ref.getDownloadURL().toPromise();
 /// adds the files in our database : contains the download url,name,path and course
-        this.db.collection('files').add( { downloadURL: this.downloadURL, path, course: this.coursetitle, name:this.name, year: this.year});
+        this.db.collection( this.courseCategory).add( { downloadURL: this.downloadURL, path, course: this.coursetitle, name:this.name, year: this.year});
       }),
     );
 

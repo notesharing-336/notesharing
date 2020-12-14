@@ -49,6 +49,7 @@ import { UploadzoneDirective } from './uploadzone.directive';
 import { UploadTaskComponent } from './components/upload-task/upload-task.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -98,6 +99,7 @@ import { UploadTaskComponent } from './components/upload-task/upload-task.compon
     MatMenuModule,
     MaterialFileInputModule,
     MatProgressBarModule
+
 
   ],
   providers: [],
