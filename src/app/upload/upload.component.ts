@@ -11,10 +11,15 @@ export class UploadComponent {
   Name: string;
   isHovering: boolean;
   isUpload: boolean = false;
+  isreadytoupload:boolean = false;
 
   files: File[] = [];
 
 
+
+  togglereadyupload(){
+this.isreadytoupload = true
+  }
   //shows the upload box after the submit button has been clicked
   toggleupload(){
     this.isUpload = true
