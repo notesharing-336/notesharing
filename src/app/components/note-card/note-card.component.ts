@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-note-card',
@@ -6,19 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./note-card.component.css']
 })
 export class NoteCardComponent implements OnInit {
-  studentName: string;
-  studentContributions: number;
-  studentYear: string;
-  studentMajor: string;
-  studentRating: number;
+  @Input() studentName: string;
+  @Input() studentYear: string;
+
 
 
   constructor() {
-    this.studentName = "Bernard Boadu";
-    this.studentContributions = 10;
-    this.studentYear = "Senior"
-    this.studentMajor = "Computer Science"
-    this.studentRating = 2.5
+   
+
    }
 
   ngOnInit(): void {
