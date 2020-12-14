@@ -42,6 +42,11 @@ import { SingleCourseInfoComponent } from './components/single-course-info/singl
 import { NoteCardComponent } from './components/note-card/note-card.component';
 import { NotecardContainerComponent } from './components/notecard-container/notecard-container.component';
 import { CourseDetailsComponent } from './pages/course-details/course-details.component';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { UploadComponent } from './upload/upload.component';
+import { UploadzoneDirective } from './uploadzone.directive';
+import { UploadTaskComponent } from './components/upload-task/upload-task.component';
 
 
 @NgModule({
@@ -64,6 +69,9 @@ import { CourseDetailsComponent } from './pages/course-details/course-details.co
     NoteCardComponent,
     NotecardContainerComponent,
     CourseDetailsComponent,
+    UploadComponent,
+    UploadzoneDirective,
+    UploadTaskComponent,
   ],
 
   imports: [
@@ -87,7 +95,9 @@ import { CourseDetailsComponent } from './pages/course-details/course-details.co
     FormsModule,
     MatFormFieldModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MaterialFileInputModule,
+    MatProgressBarModule
 
   ],
   providers: [],

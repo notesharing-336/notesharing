@@ -1,0 +1,35 @@
+<mat-card>
+    <form>
+        <mat-form-field appearance="outline">
+            <mat-label>Course Title </mat-label>
+            <input matInput type="text" id="coursetitle" [(ngModel)]="coursetitle" name="coursetitle" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Name </mat-label>
+            <input matInput type="text" id="coursetitle" [(ngModel)]="Name" name="Name" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>year</mat-label>
+            <input matInput type="text" id="coursetitle" [(ngModel)]="year" name="year" required>
+        </mat-form-field>
+    </form>
+    <button mat-button (click)="toggleupload()">SUBMIT</button>
+</mat-card>
+
+<div *ngIf="isUpload ===true" class="uploadzone " uploadzone (hovered)="toggleHover($event) " (dropped)="onDrop($event) " [class.hovering]="isHovering ">
+
+    <input class="file-input" type="file" (change)="onDrop($event.target.files)">
+    <h3>Upload your notes here</h3>
+    <p>Drag and Drop a File</p>
+
+</div>
+
+
+<h3>{{coursetitle}}</h3>
+
+<!-- calls the upload task and has input parameters -->
+<div *ngFor=" let file of files ">
+    <app-upload-task [file]="file" [coursetitle]="coursetitle" [year]="year" [name]="Name"></app-upload-task>
+</div>
