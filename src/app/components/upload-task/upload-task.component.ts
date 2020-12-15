@@ -13,8 +13,8 @@ import { finalize, tap } from 'rxjs/operators'
 })
 export class UploadTaskComponent implements OnInit {
   @Input() file: File;
-  @Input() coursetitle: string;
-  @Input() name:string;
+  @Input() courseName: string;
+  @Input() studentName:string;
   @Input() year:string;
   @Input() courseCategory:string;
 
@@ -31,7 +31,7 @@ export class UploadTaskComponent implements OnInit {
 
   ngOnInit() {
     this.startUpload();
-    console.log(this.coursetitle)
+   
   }
 
   startUpload() {
@@ -39,7 +39,7 @@ export class UploadTaskComponent implements OnInit {
     //
 
     // sets the path to our firebase storage
-    const path = `${this.courseCategory}/${Date.now()}_${this.file.name}`;
+    const path = `Notes/${Date.now()}_${this.file.name}`;
 
     // Reference to storage bucket--
     const ref = this.storage.ref(path);
@@ -56,7 +56,7 @@ export class UploadTaskComponent implements OnInit {
       finalize( async() =>  {
         this.downloadURL = await ref.getDownloadURL().toPromise();
 /// adds the files in our database : contains the download url,name,path and course
-        this.db.collection( this.courseCategory).add( { downloadURL: this.downloadURL, path, course: this.coursetitle, name:this.name, year: this.year});
+        this.db.collection('Notes/').add( { downloadURL: this.downloadURL, path, courseCategoryTitle: this.courseCategory, courseName:this.courseName, studentName:this.studentName, year: this.year});
       }),
     );
 
