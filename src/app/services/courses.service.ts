@@ -38,12 +38,11 @@ export interface CourseCategory{
  * an image/url if included.
  */
 export interface Note {
-  id: number;
-  contributorId: string;
-  courseTitle: string;
-  documentname: string;
-  documentImage?: string;
-  documentURL?: string;
+  studentName: string;
+  courseName: string;
+  courseCategoryTitle: string;
+  path: string;
+  downloadURL: string;
 }
 
 /**
@@ -82,6 +81,7 @@ export class CoursesService {
   courseCategories: CourseCategory[];
   courses: Course[];
   localcourse: Course[];
+  localnote: Note[];
 
   constructor(public db:AngularFirestore) { }
 
@@ -111,6 +111,31 @@ export class CoursesService {
     console.log(this.localcourse);
     return this.localcourse
   }
+
+  retrieveNoteFromDatabase(){
+    this.db.collection<Note>('Notes').valueChanges().subscribe(
+      documentRefs => {
+      this.localnote = documentRefs;
+      }
+    );
+    console.log(this.localnote);
+    return this.localnote
+  }
+
+  retrieveNotesByCourseName(categoryName: string){
+
+    let filteredNotes: Note[] = [];
+    let notes: Note[] = this.retrieveNoteFromDatabase();
+    if (notes !== undefined || notes !== null) {
+      notes.forEach(note => {
+        if(note.courseName === categoryName)  {
+          filteredNotes.push(note)
+        }
+      });
+    }
+    return filteredNotes
+  }
+
 
 
 
