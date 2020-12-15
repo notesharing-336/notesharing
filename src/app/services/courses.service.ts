@@ -87,7 +87,10 @@ export class CoursesService {
    * to allow it to be rendered on the webpage
    */
   retrieveAllCourseCategories() : CourseCategory[] {
-    this.courseCategories = getAllCourseCategory();   //static data from the data folder.
+    if (this.courseCategories === undefined || this.courseCategories == null) {
+      console.log("Came here to retrieve course categories")
+      this.courseCategories = getAllCourseCategory();   //static data from the data folder.
+    }
     return this.courseCategories;
   }
 
@@ -95,7 +98,10 @@ export class CoursesService {
    * Retrieves all courses from the database.
    */
   retrieveAllCourses() : Course[] {
-    this.courses = getAllAvailableCourses();
+    if (this.courses === undefined || this.courses === null) {
+      console.log("Came here to retrieve courses")
+      this.courses = getAllAvailableCourses();  //only retrieve if the list is not populated
+    }
     return this.courses;
   }
 
@@ -110,8 +116,25 @@ export class CoursesService {
     let filteredCourses: Course[] = [];
     let courses: Course[] = this.retrieveAllCourses();
     if (courses !== undefined || courses !== null) {
+
       courses.forEach(course => {
         if(course.courseCategoryTitle === categoryTitle)  {
+          filteredCourses.push(course)
+        }
+      });
+    }
+    return filteredCourses
+  }
+
+  retrieveCourseByName(courseName: string ) : Course[] {
+    let filteredCourses: Course[] = [];
+    let courses: Course[] = this.retrieveAllCourses();
+    if (courses !== undefined || courses !== null) {
+
+      courses.forEach(course => {
+        let formattedCourseName: string = course.courseName.split(" ").join("").toLowerCase();
+        let searchedRegexCourseName = new RegExp(courseName);
+        if(searchedRegexCourseName.test(formattedCourseName))  {
           filteredCourses.push(course)
         }
       });

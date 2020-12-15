@@ -15,13 +15,28 @@ interface DisplayableCourse {
 export class CourseDetailsComponent implements OnInit {
   
   courses : DisplayableCourse[]
-  categoryQuery: string;
+  query: string;
+  queryDisplay: string;
 
   constructor(private courseService: CoursesService) { }
 
   ngOnInit(): void {
-    this.categoryQuery = history.state.data; //category sent by courses page
-    let unformattedCourses: Course[] = this.courseService.retrieveCoursesByCategory(this.categoryQuery)
+    this.query = history.state.data; //the query made when routing to this page
+    let queryType: string = history.state.queryType; //category query vs search query
+    let unformattedCourses: Course[] = []
+
+    //to know to query for all courses related to a course category
+    if (queryType !== null && queryType === "COURSE_CATEGORY"){
+      unformattedCourses = this.courseService.retrieveCoursesByCategory(this.query)
+      this.queryDisplay = this.query;
+
+    //to know to query for all courses related to a search detail
+    } else if (queryType !== null && queryType === "COURSE_DETAIL"){
+      unformattedCourses = this.courseService.retrieveCourseByName(this.query)
+      this.queryDisplay = unformattedCourses.length !== 0 ? 
+          unformattedCourses[0].courseName : this.query + " (NO RESULTS FOUND)";
+    }
+
     this.courses = this.formatCoursesForDisplay(unformattedCourses);
   }
 
