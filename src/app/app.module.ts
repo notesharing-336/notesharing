@@ -42,6 +42,7 @@ import { SingleCourseInfoComponent } from './components/single-course-info/singl
 import { NoteCardComponent } from './components/note-card/note-card.component';
 import { NotecardContainerComponent } from './components/notecard-container/notecard-container.component';
 import { CourseDetailsComponent } from './pages/course-details/course-details.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { CourseDetailsComponent } from './pages/course-details/course-details.co
     NoteCardComponent,
     NotecardContainerComponent,
     CourseDetailsComponent,
+    UserProfileComponent,
   ],
 
   imports: [
