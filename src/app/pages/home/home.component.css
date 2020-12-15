@@ -5,5 +5,5 @@ a {
 body {
     width: 100%;
     height: 100%;
-    background: #FFFF99;
+    background-image: url("/assets/images/landingPage.png");
 }
