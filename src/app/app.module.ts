@@ -48,6 +48,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { UploadComponent } from './upload/upload.component';
 import { UploadzoneDirective } from './uploadzone.directive';
 import { UploadTaskComponent } from './components/upload-task/upload-task.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 
 
@@ -100,7 +101,9 @@ import { UploadTaskComponent } from './components/upload-task/upload-task.compon
     MatMenuModule,
     MaterialFileInputModule,
     MatProgressBarModule,
-    MatDialogModule
+    MatDialogModule,
+    PdfViewerModule
+
 
 
 

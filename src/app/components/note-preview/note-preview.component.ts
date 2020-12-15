@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Inject } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { StringDecoder } from 'string_decoder';
 
 @Component({
   selector: 'app-note-preview',
@@ -6,8 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./note-preview.component.css']
 })
 export class NotePreviewComponent implements OnInit {
+url:StringDecoder
 
-  constructor() { }
+
+  constructor(public dialogRef: MatDialogRef<NotePreviewComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) {
+      this.url = data.url
+    }
 
   ngOnInit(): void {
   }

@@ -133,6 +133,9 @@ export class CoursesService {
         }
       });
     }
+    console.log(notes)
+    console.log(categoryName)
+    console.log(filteredNotes)
     return filteredNotes
   }
 

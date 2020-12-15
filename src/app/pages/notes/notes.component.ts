@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notes.component.css']
 })
 export class NotesComponent implements OnInit {
-
+categorytitle: string
   constructor() { }
 
   ngOnInit(): void {
+
+    this.categorytitle = history.state.data
   }
 
 }
