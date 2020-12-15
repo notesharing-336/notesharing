@@ -31,7 +31,7 @@ export class UploadTaskComponent implements OnInit {
 
   ngOnInit() {
     this.startUpload();
-   
+
   }
 
   startUpload() {
@@ -56,6 +56,7 @@ export class UploadTaskComponent implements OnInit {
       finalize( async() =>  {
         this.downloadURL = await ref.getDownloadURL().toPromise();
 /// adds the files in our database : contains the download url,name,path and course
+        this.db.collection('Courses/').add({courseCategoryTitle: this.courseCategory, courseName:this.courseName,})
         this.db.collection('Notes/').add( { downloadURL: this.downloadURL, path, courseCategoryTitle: this.courseCategory, courseName:this.courseName, studentName:this.studentName, year: this.year});
       }),
     );
