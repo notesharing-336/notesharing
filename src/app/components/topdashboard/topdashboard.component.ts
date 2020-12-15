@@ -1,4 +1,7 @@
+import { MatDialog } from '@angular/material/dialog';
+import { UploadComponent } from './../../upload/upload.component';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-topdashboard',
@@ -7,13 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopdashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
-  signIn():void {
-    console.log("Sign in clicked! Awaiting sign in/up component")
+  openDialog(): void {
+    const dialogRef = this.dialog.open(UploadComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
-
 }

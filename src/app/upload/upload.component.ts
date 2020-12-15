@@ -1,6 +1,9 @@
 import { CoursesService } from './../services/courses.service';
 
 import { Component } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-upload',
@@ -14,18 +17,15 @@ export class UploadComponent {
   Name: string;
   isHovering: boolean;
   isUpload: boolean = false;
-  isreadytoupload:boolean = false;
   courses: any;
 
   files: File[] = [];
 
-constructor(public db: CoursesService){
+constructor(public db: CoursesService,public dialogRef: MatDialogRef<UploadComponent>){
 this.courses = db.retrieveAllCourseCategories();
 
 }
-  togglereadyupload(){
-this.isreadytoupload = true
-  }
+
   //shows the upload box after the submit button has been clicked
   toggleupload(){
     this.isUpload = true

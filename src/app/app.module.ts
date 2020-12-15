@@ -20,6 +20,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatInputModule } from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 import { HomeComponent } from './pages/home/home.component';
@@ -98,7 +99,10 @@ import { UploadTaskComponent } from './components/upload-task/upload-task.compon
     MatIconModule,
     MatMenuModule,
     MaterialFileInputModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatDialogModule
+
+
 
 
   ],
