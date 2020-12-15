@@ -1,0 +1,15 @@
+a {
+    color: black;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: #FFFF99;
+    align-items: center;
+}
+
+img {
+    align-items: center;
+    margin: auto;
+}
