@@ -1,9 +1,11 @@
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { Injectable } from '@angular/core';
 import { CategoryDescription, getAllCourseCategory } from '../data/course-category.enum';
 import { getAllAvailableCourses } from '../data/courses.enum';
 
 /**
- * Refers to a single course. E.g. HIST 153 with a 
+ * Refers to a single course. E.g. HIST 153 with a
  * description of 'Explorations in World History' and
  * category 'History'
  */
@@ -11,7 +13,7 @@ export interface Course{
   courseName: string;
   courseDescription: string;
   courseCategoryTitle: string;
-  professors: string[];
+  professors?: string[];
   contributors?: string[];
   rating?: number;
   comments?: string[];
@@ -32,16 +34,15 @@ export interface CourseCategory{
  * student. The note references a course title which can
  * be used to look up a course's related information like
  * its rating, contributors and professors. It also
- * includes the document name (e.g. note.pdf) with 
+ * includes the document name (e.g. note.pdf) with
  * an image/url if included.
  */
 export interface Note {
-  id: number;
-  contributorId: string;
-  courseTitle: string;
-  documentname: string;
-  documentImage?: string;
-  documentURL?: string;
+  studentName: string;
+  courseName: string;
+  courseCategoryTitle: string;
+  path: string;
+  downloadURL: string;
 }
 
 /**
@@ -57,7 +58,7 @@ export interface Professor {
 /**
  * Refers to a student who contributes his/her note. A
  * student information would include things like their
- * contribution number and the courses they have 
+ * contribution number and the courses they have
  * contributed.
  */
 export interface Student {
@@ -79,8 +80,10 @@ export class CoursesService {
 
   courseCategories: CourseCategory[];
   courses: Course[];
+  localcourse: Course[];
+  localnote: Note[];
 
-  constructor() { }
+  constructor(public db:AngularFirestore) { }
 
   /**
    * Retrives all the course categories and its information
@@ -88,7 +91,6 @@ export class CoursesService {
    */
   retrieveAllCourseCategories() : CourseCategory[] {
     if (this.courseCategories === undefined || this.courseCategories == null) {
-      console.log("Came here to retrieve course categories")
       this.courseCategories = getAllCourseCategory();   //static data from the data folder.
     }
     return this.courseCategories;
@@ -99,11 +101,44 @@ export class CoursesService {
    */
   retrieveAllCourses() : Course[] {
     if (this.courses === undefined || this.courses === null) {
-      console.log("Came here to retrieve courses")
-      this.courses = getAllAvailableCourses();  //only retrieve if the list is not populated
+      this.courses = this.retrieveCourseFromDatabase();
     }
     return this.courses;
   }
+
+  retrieveCourseFromDatabase(){
+    this.db.collection<Course>('Courses').valueChanges().subscribe(
+      documentRefs => {
+      this.localcourse = documentRefs;
+      }
+    );
+    console.log(this.localcourse);
+    return this.localcourse
+  }
+
+  retrieveNoteFromDatabase(){
+    this.db.collection<Note>('Notes').valueChanges().subscribe(
+      documentRefs => {
+      this.localnote = documentRefs;
+      }
+    );
+    return this.localnote
+  }
+
+  retrieveNotesByCourseName(categoryName: string){
+
+    let filteredNotes: Note[] = [];
+    let notes: Note[] = this.retrieveNoteFromDatabase();
+    if (notes !== undefined || notes !== null) {
+      notes.forEach(note => {
+        if(note.courseName === categoryName)  {
+          filteredNotes.push(note)
+        }
+      });
+    }
+    return filteredNotes
+  }
+
 
   /**
    * Retrieves all courses based on the category type

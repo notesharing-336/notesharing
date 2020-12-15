@@ -12,13 +12,15 @@ export class SingleCourseInfoComponent implements OnInit {
   @Input() detailedCourseTitle: string;
   @Input() professors: string;
   @Input() contributors: string;
-  
+
   constructor(private pageRouter: Router) { }
 
   ngOnInit(): void {
   }
-  
-  showNotesPage() {
-    this.pageRouter.navigateByUrl("/notes")
+
+  showNotesPage(courseTitle) {
+
+    this.pageRouter.navigateByUrl("/notes", {state: {data: courseTitle} });
   }
+
 }
