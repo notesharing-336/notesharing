@@ -1,12 +1,12 @@
-<div class="single-course-container" (click)="showNotesPage()">
+<div class="single-course-container" (click)="showNotesPage(detailedCourseTitle)">
 
     <div class="course-name-container">
         <mat-icon class="icon trending-icon">trending_down</mat-icon>
         <span class="card-text">{{detailedCourseTitle}}</span>
     </div>
-    
+
     <div class="profs-container">
-         <mat-icon class="icon">person_outline</mat-icon>
+        <mat-icon class="icon">person_outline</mat-icon>
         <span class="card-text">Profs: {{professors}}</span>
     </div>
 

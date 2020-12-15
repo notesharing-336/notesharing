@@ -20,6 +20,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatInputModule } from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 import { HomeComponent } from './pages/home/home.component';
@@ -42,6 +43,12 @@ import { SingleCourseInfoComponent } from './components/single-course-info/singl
 import { NoteCardComponent } from './components/note-card/note-card.component';
 import { NotecardContainerComponent } from './components/notecard-container/notecard-container.component';
 import { CourseDetailsComponent } from './pages/course-details/course-details.component';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { UploadComponent } from './upload/upload.component';
+import { UploadzoneDirective } from './uploadzone.directive';
+import { UploadTaskComponent } from './components/upload-task/upload-task.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 
@@ -65,6 +72,9 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     NoteCardComponent,
     NotecardContainerComponent,
     CourseDetailsComponent,
+    UploadComponent,
+    UploadzoneDirective,
+    UploadTaskComponent,
     UserProfileComponent,
   ],
 
@@ -89,8 +99,11 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     FormsModule,
     MatFormFieldModule,
     MatIconModule,
-    MatMenuModule
-
+    MatMenuModule,
+    MaterialFileInputModule,
+    MatProgressBarModule,
+    MatDialogModule,
+    PdfViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

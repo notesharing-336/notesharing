@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { NotePreviewComponent } from './../note-preview/note-preview.component';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-note-card',
@@ -6,25 +9,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./note-card.component.css']
 })
 export class NoteCardComponent implements OnInit {
-  studentName: string;
-  studentContributions: number;
-  studentYear: string;
-  studentMajor: string;
-  studentRating: number;
+  @Input() studentName: string;
+  @Input() studentYear: string;
+  @Input() url: string
 
 
-  constructor() {
-    this.studentName = "Bernard Boadu";
-    this.studentContributions = 10;
-    this.studentYear = "Senior"
-    this.studentMajor = "Computer Science"
-    this.studentRating = 2.5
+
+  constructor(public dialog: MatDialog) {
+
+
    }
 
   ngOnInit(): void {
   }
 
-  showNoteContent() {
-    console.log("will nagivate to the note preview page")
+
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(NotePreviewComponent, {data: { url: this.url}});
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }

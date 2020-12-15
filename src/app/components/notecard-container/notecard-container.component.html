@@ -4,15 +4,9 @@
         <div class="filter-bar-component"></div>
     </div>
 
-    <div class="card-display-container">
-        <app-note-card></app-note-card>
-        <app-note-card></app-note-card>
-        <app-note-card></app-note-card>
-        <app-note-card></app-note-card>
-        <app-note-card></app-note-card>
-        <app-note-card></app-note-card>
-        <app-note-card></app-note-card>
-        <app-note-card></app-note-card>
+    <div class="card-display-container" *ngFor="let note of notes">
+        <app-note-card [studentName]="note.studentName" [url]="note.downloadURL"></app-note-card>
+
     </div>
 
 </div>

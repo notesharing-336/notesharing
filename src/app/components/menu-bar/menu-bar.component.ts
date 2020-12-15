@@ -1,3 +1,5 @@
+import { AuthenticateService } from './../../services/authenticateservice.service';
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuBarComponent implements OnInit {
 
-  constructor() { }
+  username: any;
+
+  constructor(public user: AuthenticateService) {
+    this.username = user.userDetails();
+    console.log(this.username.uid);
+   }
 
   ngOnInit(): void {
   }

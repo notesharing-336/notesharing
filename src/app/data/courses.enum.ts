@@ -1,4 +1,4 @@
-import { Course } from '../services/courses.service';
+import { Course, Note } from '../services/courses.service';
 
 //A constant that holds the description of each specific course
 export enum CoursesDescriptions {
@@ -13,9 +13,21 @@ export enum CoursesDescriptions {
     CS_336 = "WEB DEVELOPMENT",
     HIST_151 = "HISTORY OF THE WEST AND THE WORLD I",
     HIST_152 = "HISTORY OF THE WEST AND THE WORLD II",
-    HIST_153 = "EXPLORATIONS IN WORLD HISTORY"
+    HIST_153 = "EXPLORATIONS IN WORLD HISTORY",
+    ECON_221 = "INTRODUCTION TO ECONOMICS"
 }
 
+
+export function getAllNotes() : Note[] {
+    return [
+        {
+            studentName: "Calvin",
+            courseName: "Econ 221",
+            courseCategoryTitle: "Economics",  
+        }
+        
+    ]
+}
 /**
  * This function returns a list containing a sample list of courses
  * and their course details.
@@ -77,6 +89,13 @@ export function getAllAvailableCourses() : Course[] {
             courseCategoryTitle: "Computer Science",
             professors: ["Victor Norman", "Keith Vander Linden", "Kenneth Arnold"],
             contributors: ["Bernard Boadu, Alfred Marfo"]
+        },
+        {
+            courseName: "Econ 221",
+            courseDescription: CoursesDescriptions.ECON_221,
+            courseCategoryTitle: "Economics",
+            professors: ["Patrick Bailey", "Won Lee"],
+            contributors: ["Mittens, Gust"]
         },
     ]
 }
