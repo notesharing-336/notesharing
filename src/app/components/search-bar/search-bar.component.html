@@ -1,6 +1,7 @@
 <div class = "search-field">
     <label for="searchbox">
-        <input  type="search" name="searchbox" [(ngModel)]="searchText" placeholder="Search course title">
+        <input #box (keyup.enter)="displaySearchResults(box.value)" type="search" name="searchbox" [(ngModel)]="searchText"
+        placeholder="Search course title"  >
     </label>
 </div>
 <div class="result-box" >

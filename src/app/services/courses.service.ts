@@ -90,7 +90,9 @@ export class CoursesService {
    * to allow it to be rendered on the webpage
    */
   retrieveAllCourseCategories() : CourseCategory[] {
-    this.courseCategories = getAllCourseCategory();   //static data from the data folder.
+    if (this.courseCategories === undefined || this.courseCategories == null) {
+      this.courseCategories = getAllCourseCategory();   //static data from the data folder.
+    }
     return this.courseCategories;
   }
 
@@ -98,7 +100,9 @@ export class CoursesService {
    * Retrieves all courses from the database.
    */
   retrieveAllCourses() : Course[] {
-    this.courses = this.retrieveCourseFromDatabase();
+    if (this.courses === undefined || this.courses === null) {
+      this.courses = this.retrieveCourseFromDatabase();
+    }
     return this.courses;
   }
 
@@ -118,7 +122,6 @@ export class CoursesService {
       this.localnote = documentRefs;
       }
     );
-    console.log(this.localnote);
     return this.localnote
   }
 
@@ -133,14 +136,8 @@ export class CoursesService {
         }
       });
     }
-    console.log(notes)
-    console.log(categoryName)
-    console.log(filteredNotes)
     return filteredNotes
   }
-
-
-
 
 
   /**
@@ -154,8 +151,25 @@ export class CoursesService {
     let filteredCourses: Course[] = [];
     let courses: Course[] = this.retrieveAllCourses();
     if (courses !== undefined || courses !== null) {
+
       courses.forEach(course => {
         if(course.courseCategoryTitle === categoryTitle)  {
+          filteredCourses.push(course)
+        }
+      });
+    }
+    return filteredCourses
+  }
+
+  retrieveCourseByName(courseName: string ) : Course[] {
+    let filteredCourses: Course[] = [];
+    let courses: Course[] = this.retrieveAllCourses();
+    if (courses !== undefined || courses !== null) {
+
+      courses.forEach(course => {
+        let formattedCourseName: string = course.courseName.split(" ").join("").toLowerCase();
+        let searchedRegexCourseName = new RegExp(courseName);
+        if(searchedRegexCourseName.test(formattedCourseName))  {
           filteredCourses.push(course)
         }
       });

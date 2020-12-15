@@ -49,7 +49,7 @@ import { UploadComponent } from './upload/upload.component';
 import { UploadzoneDirective } from './uploadzone.directive';
 import { UploadTaskComponent } from './components/upload-task/upload-task.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
-
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 
 @NgModule({
@@ -75,6 +75,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     UploadComponent,
     UploadzoneDirective,
     UploadTaskComponent,
+    UserProfileComponent,
   ],
 
   imports: [
@@ -103,11 +104,6 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     MatProgressBarModule,
     MatDialogModule,
     PdfViewerModule
-
-
-
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]
