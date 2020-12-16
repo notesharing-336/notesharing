@@ -1,8 +1,5 @@
 import { CoursesService } from './../services/courses.service';
-
 import { Component } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
-import {MatDialogModule} from '@angular/material/dialog';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -11,7 +8,7 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./upload.component.css']
 })
 export class UploadComponent {
-  coursecat:string;
+  coursecat: string;
   coursetitle: string;
   year: string;
   Name: string;
@@ -21,13 +18,13 @@ export class UploadComponent {
 
   files: File[] = [];
 
-constructor(public db: CoursesService,public dialogRef: MatDialogRef<UploadComponent>){
-this.courses = db.retrieveAllCourseCategories();
+  constructor(public db: CoursesService, public dialogRef: MatDialogRef<UploadComponent>) {
+    this.courses = db.retrieveAllCourseCategories();
 
-}
+  }
 
   //shows the upload box after the submit button has been clicked
-  toggleupload(){
+  toggleupload() {
     this.isUpload = true
   }
 

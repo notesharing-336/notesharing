@@ -1,5 +1,11 @@
+<!-- HTML code for courses component
+    It inherits the app-topdashboard component
+    that serves as the menubar and the single course information
+-->
+
 <app-topdashboard></app-topdashboard>
 <div class="card-display-container">
+    <!-- ngFor creates div for each of the course categories -->
     <div *ngFor="let category of courseCategories">
          <app-courses-card [courseImageSrc] = "category.categoryImage"[courseTitle]="category.categoryName"
         [courseDescription]="category.description">

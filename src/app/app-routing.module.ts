@@ -6,9 +6,10 @@ import { CoursesComponent } from './pages/courses/courses.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotesComponent } from './pages/notes/notes.component';
 import { CourseDetailsComponent } from './pages/course-details/course-details.component';
-import { SingleCourseInfoComponent } from './components/single-course-info/single-course-info.component';
-import { NoteCardComponent } from './components/note-card/note-card.component';
 
+/** routes array type Routes
+ *  contains path for the different pages
+ * */  
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'courses', component: CoursesComponent },

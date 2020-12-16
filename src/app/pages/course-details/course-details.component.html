@@ -1,3 +1,8 @@
+<!-- HTML code for course details component
+    It inherits the app-topdashboard component
+    that serves as the menubar and the single course information
+-->
+
 <app-topdashboard></app-topdashboard>
 <div class="container">
     <div class="header">
@@ -5,8 +10,9 @@
         <div class="filter-bar-component"></div>
     </div>
 
+    <!-- ngFor iterates through all of the courses and creates a div for each of them -->
     <div class="card-display-container" *ngFor="let course of courses">
-        <app-single-course-info [detailedCourseTitle]="course.detailedTitle" 
+        <app-single-course-info [detailedCourseTitle]="course.detailedTitle"  
         [contributors] = course.contributors [professors]="course.professors">
     </app-single-course-info>
     </div>

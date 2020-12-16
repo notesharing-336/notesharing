@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-
-
-=======
->>>>>>> master
 # Notesharing  
 This application allows students to upload their notes onto a shared platform for others to access, review, rate and comment on.  
 

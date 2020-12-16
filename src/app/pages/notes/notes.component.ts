@@ -5,6 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './notes.component.html',
   styleUrls: ['./notes.component.css']
 })
+
+/* NotesComponent()
+* @param: none
+* returns: nothing
+*/
 export class NotesComponent implements OnInit {
 categorytitle: string
   constructor() { }

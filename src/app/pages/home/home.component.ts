@@ -7,16 +7,15 @@ import { Observable } from 'rxjs';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
+/* HomeComponent() 
+* @param: none
+* returns: nothing
+*/
 export class HomeComponent implements OnInit {
-
-
-  constructor(private db: AngularFirestore) {
-     const things = db.collection('task').valueChanges();
-      things.subscribe(console.log);
-   }
-
-
-
+  constructor() {
+  }
+  
   ngOnInit(): void {
   }
 

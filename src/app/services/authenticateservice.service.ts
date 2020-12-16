@@ -7,6 +7,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class AuthenticateService {
 
+
+  // Deprecated component
   constructor(
     private afAuth: AngularFireAuth
   ) { }

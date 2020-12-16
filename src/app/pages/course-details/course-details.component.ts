@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Course, CoursesService } from 'src/app/services/courses.service';
 
+
+/* DisplayCourse
+* interface that defines type DisplayCourse
+* with properties detailedTitle, professors
+* and contributors
+*/
+
+
 interface DisplayableCourse {
   detailedTitle: string,
   professors: string;
@@ -12,6 +20,14 @@ interface DisplayableCourse {
   templateUrl: './course-details.component.html',
   styleUrls: ['./course-details.component.css']
 })
+
+
+/* class CourseDetailsComponent
+*  implements OnInit
+*  @param: none
+*  returns: formattedCourses
+*/
+
 export class CourseDetailsComponent implements OnInit {
   
   courses : DisplayableCourse[]
@@ -19,6 +35,12 @@ export class CourseDetailsComponent implements OnInit {
   queryDisplay: string;
 
   constructor(private courseService: CoursesService) { }
+
+  /* ngOnit()
+   * knows what information to call based on the query
+   * @param: none
+   * returns: nothing
+   */
 
   ngOnInit(): void {
     this.query = history.state.data; //the query made when routing to this page

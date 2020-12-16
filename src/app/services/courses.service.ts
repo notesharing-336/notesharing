@@ -108,7 +108,13 @@ export class CoursesService {
     
   }
 
-  retrieveCourseFromDatabase(){
+  /** retrieveCourseFromDatabase() type Course[]
+  * @param: none
+  * returns: localcourse
+  * retrieves individual course from db
+  */
+
+  retrieveCourseFromDatabase(): Course[]{
     console.log("getting stuff from")
     this.db.collection<Course>('Courses').valueChanges().subscribe(
       documentRefs => {
@@ -118,7 +124,14 @@ export class CoursesService {
     return this.localcourse
   }
 
-  retrieveNoteFromDatabase(){
+  /** retrieveNoteFromDatabase() type Note[]
+  * @param: none
+  * returns: localnote
+  * retrieves individual note from db
+  */
+
+
+  retrieveNoteFromDatabase(): Note[]{
     this.db.collection<Note>('Notes').valueChanges().subscribe(
       documentRefs => {
       this.localnote = documentRefs;
@@ -127,7 +140,14 @@ export class CoursesService {
     return this.localnote
   }
 
-  retrieveNotesByCourseName(categoryName: string){
+  /** retrieveNotesFromDatabase() type Note[]
+  * @param: categoryName: string
+  * returns: filterednotes
+  * retrieves filtered notes from db
+  */
+
+
+  retrieveNotesByCourseName(categoryName: string): Note[]{
 
     let filteredNotes: Note[] = [];
     let notes: Note[] = this.retrieveNoteFromDatabase().concat(getAllNotes());
@@ -162,6 +182,11 @@ export class CoursesService {
     }
     return filteredCourses
   }
+
+  /** retrieveCourseByName type Course[]
+   * @param: courseName: string
+   * returns filterdCourses
+   */
 
   retrieveCourseByName(courseName: string ) : Course[] {
     let filteredCourses: Course[] = [];

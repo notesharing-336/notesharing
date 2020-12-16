@@ -1,9 +1,12 @@
+/* Styling sheet for courses component */
 .card-display-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
+
+/* Responsive CSS */
 /* When the screen is super small, it should be in 1 column */
 @media (min-width:400px) {
   .card-display-container {
