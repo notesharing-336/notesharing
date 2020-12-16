@@ -1,6 +1,6 @@
 import { Course, Note } from '../services/courses.service';
 
-//A constant that holds the description of each specific course
+//A constant that holds the description of each specific course.
 export enum CoursesDescriptions {
     MATH_171 = "CALCLUS I",
     MATH_172 = "CALCULUS II",
